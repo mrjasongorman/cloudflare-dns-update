@@ -1,6 +1,6 @@
 # Bind your public IP to Cloudflare managed DNS record
 
-A small script to update a Cloudflare DNS record. Essentially giving you the ability to have a static IP without paying for a static IP. Though you will need to have and therefore be paying for a domain name.
+Very similar to dyndns, but talks to Cloudflare.
 
 e.g  `subdomain.mywebsite.com` == `Your public IP address`
 
