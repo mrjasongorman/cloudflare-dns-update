@@ -1,4 +1,4 @@
-# Bind public IP to Cloudflare managed DNS
+# Bind your public IP to Cloudflare managed DNS record
 
 A small script to update a Cloudflare DNS record. Essentially giving you the ability to have a static IP without paying for a static IP. Though you will need to have and therefore be paying for a domain name.
 
