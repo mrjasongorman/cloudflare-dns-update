@@ -1,8 +1,8 @@
 MY_PUBLIC_IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-ZONE_ID=
-RECORD_ID=
-RECORD_NAME=
-AUTH_TOKEN=
+ZONE_ID=""
+RECORD_ID=""
+RECORD_NAME=""
+AUTH_TOKEN=""
 TTL=60
 
 echo "Updating Cloudflare with public IP ${myip}"
