@@ -21,10 +21,6 @@ Then place that token somewhere secure and feed it into the `AUTH_TOKEN` variabl
 
 ## Other Variables
 
-**MY_PUBLIC_IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"**
-
-This grabs your current public IP address by querying Open DNS. This can also be changed to query Googles resolver instead. Google it. 
-
 **ZONE_ID**
 
 This refers to your Zone ID in Cloudflare. You'll see this listed at the side of your screen in Cloudflare when you click into a domain.
@@ -42,6 +38,14 @@ curl -X GET "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE_ID/dns_records
 **RECORD_NAME**
 
 This is the full URI for example if you have a record for `subdomain` it should be `subdomain.yourwebsite.com`
+
+**MY_PUBLIC_IP**
+
+This grabs your current public IP address by querying Open DNS. This can also be changed to query Googles resolver instead. Google it. 
+
+**CURRENT_IP**
+
+This grabs the current value that Cloudflare has saved for your `RECORD_NAME`, essentially just a DNS request to Cloudflares own DNS servers. It then compares it against `MY_PUBLIC_IP` to see if they're the same, and if not it updates Cloudflare.
 
 **TTL=60**
 
