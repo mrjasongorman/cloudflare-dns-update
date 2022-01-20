@@ -7,6 +7,7 @@ e.g  `subdomain.mywebsite.com` == `Your public IP address`
 Assumptions: 
   1. You have your own domain
   2. You have it wired it up to Cloudflare
+  3. This script will be run on Linux
 
 ## Authentication
 
@@ -47,3 +48,17 @@ This is the full URI for example if you have a record for `subdomain` it should 
 This is intentially set to 60 seconds as that's the lowest value it can have. This will mean that any requests for the IP address behind `subdomain.yourwebsite.com` should only be cached by devices for 60 seconds. After that any further requests will hit Cloudflare again for the latest value.
 
 Your public IP shouldn't change that frequently. But the combination of how often the script runs + this TTL ensure that when it does change it should correct itself relatively quickly.
+
+## Automation
+
+To automate this script add it as a cron job.
+
+Run `$ crontab -e`
+
+Then add something like
+
+```
+*/1 * * * * /bin/sh /home/path-to-script/update-dns-record.sh
+```
+
+This will execute the script every minute. Again depends on how much of a lag is acceptable between your IP changing and other external devices realising.
