@@ -2,7 +2,7 @@ ZONE_ID=""
 RECORD_ID=""
 RECORD_NAME=""
 AUTH_TOKEN=""
-MY_PUBLIC_IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+MY_PUBLIC_IP="$(dig whoami.cloudflare ch txt @1.1.1.1 +short)"
 CURRENT_IP="$(dig +short ${RECORD_NAME} @1.1.1.1)"
 TTL=60
 
